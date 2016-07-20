@@ -1,7 +1,7 @@
 module.exports = function() {
-  var client = 'www',
-    clientApp = 'www/app',
-    dist = 'dist',
+  var client = 'client',
+    clientApp = './client/app',
+    dist = 'www',
     tmp = '.tmp',
     docs = 'documnetation',
     landing = 'landing';
@@ -25,7 +25,7 @@ module.exports = function() {
     ],
     less: [],
     sass: [
-      "scss/ionic.app.scss"
+      "./scss/ionic.app.scss"
     ],
     js: [
       clientApp + "/**/*.module.js",
@@ -44,7 +44,7 @@ module.exports = function() {
       ".sass-cache",
       "node_modules",
       ".git",
-      client + "/bower_components",
+      client + "/lib",
       docs + "/jade",
       docs + "/layout.html",
       landing + "/jade",
