@@ -57,7 +57,7 @@ gulp.task('sass', function() {
     .pipe($.sass(sassOptions))
     .pipe($.autoprefixer())
     .pipe($.sourcemaps.write())
-    .pipe(gulp.dest(config.tmp + '/styles'));
+    .pipe(gulp.dest(config.dist + '/styles'));
 });
 
 gulp.task('sass-min', function() {
@@ -74,7 +74,10 @@ gulp.task('sass-min', function() {
     }))
     .pipe($.sass(sassOptions))
     .pipe($.autoprefixer())
-    .pipe(gulp.dest(config.tmp + '/styles'));
+    .pipe($.rename({
+      suffix: ".min"
+    }))
+    .pipe(gulp.dest(config.dist + '/css'));
 });
 
 gulp.task('sass-watcher', function() {

@@ -6,7 +6,7 @@
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
   <title></title>
 
-  <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+  <link href="css/ionic.app.min.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
   <!-- inject:css -->
   <!-- endinject -->
@@ -15,8 +15,10 @@
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
 
-
+  <!-- build:js scripts/vendor.js -->
   <script src="lib/ionic/js/ionic.bundle.js"></script>
+  <script src="lib/ngcordova/dist/ng-cordova.js"></script>
+  <!-- endbuild -->
 
   <!-- cordova script (this will be a 404 during development) -->
   <script src="cordova.js"></script>
@@ -35,8 +37,8 @@
   <!-- build:js scripts/app.js -->
   <!-- inject:js -->
   <script src="app/app.module.js"></script>
-  <script src="app/core/core.module.js"></script>
   <script src="app/tab/tab.module.js"></script>
+  <script src="app/core/core.module.js"></script>
   <script src="app/core/app.config.js"></script>
   <script src="app/core/config.route.js"></script>
   <script src="app/tab/account/account.controller.js"></script>
@@ -44,7 +46,7 @@
   <script src="app/tab/chats/chats.service.js"></script>
   <script src="app/tab/dash/dash.controller.js"></script>
   <!-- endinject -->
-  <!-- build:js scripts/app.js -->
+  <!-- endbuild -->
 
 
 </body>

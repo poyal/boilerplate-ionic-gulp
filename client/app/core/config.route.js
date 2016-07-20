@@ -26,13 +26,13 @@
         return setRoutes(route);
       });
 
-      $stateProvider.state('tab', {
-        url: '/tab',
-        abstract: true,
-        templateUrl: 'app/tab/tabs.html'
-      });
-
-      $stateProvider.state('tab.dash', {
+      $stateProvider
+        .state('tab', {
+          url: '/tab',
+          abstract: true,
+          templateUrl: 'app/tab/tabs.html'
+        })
+        .state('tab.dash', {
           url: '/dash',
           views: {
             'tab-dash': {
@@ -71,8 +71,7 @@
 
       $urlRouterProvider
         .otherwise('/tab/dash');
-
-
+        
     }]);
 
 })();
