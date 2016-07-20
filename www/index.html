@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title></title>
+
+  <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <!-- inject:css -->
+  <!-- endinject -->
+
+  <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+
+  <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+  <!-- cordova script (this will be a 404 during development) -->
+  <script src="cordova.js"></script>
+
+
+</head>
+
+<body ng-app="app">
+  <ion-nav-bar class="bar-stable">
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+  </ion-nav-bar>
+  <ion-nav-view></ion-nav-view>
+
+
+  <!-- build:js scripts/app.js -->
+  <!-- inject:js -->
+  <script src="app/app.module.js"></script>
+  <script src="app/tab/tab.module.js"></script>
+  <script src="app/core/core.module.js"></script>
+  <script src="app/core/app.config.js"></script>
+  <script src="app/core/app.controllers.js"></script>
+  <script src="app/core/app.services.js"></script>
+  <script src="app/core/config.route.js"></script>
+  <script src="app/tab/account/account.controller.js"></script>
+  <script src="app/tab/chats/chats.controller.js"></script>
+  <script src="app/tab/chats/chats.service.js"></script>
+  <script src="app/tab/dash/dash.controller.js"></script>
+  <!-- endinject -->
+  <!-- build:js scripts/app.js -->
+
+
+</body>
+
+</html>
