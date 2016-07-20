@@ -2,7 +2,8 @@
 # http://git-scm.com/docs/gitignore
 
 node_modules/
-dist
+www/
+client/lib/
 .tmp
 .sass-cache
 platforms/
