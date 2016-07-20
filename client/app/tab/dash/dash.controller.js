@@ -24,7 +24,7 @@
         title: 'model',
         subTitle: model
       });
-      
+
     }, false);
 
   }
