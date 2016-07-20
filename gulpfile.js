@@ -24,6 +24,23 @@ gulp.task('vet', function() {
     .pipe($.jshint.reporter('fail'));
 });
 
+gulp.task('clean-tmp', function(done) {
+  var files = config.tmp;
+  clean(files, done);
+});
+
+gulp.task('clean', function(done) {
+  var delconfig = [].concat(config.dist, config.tmp);
+  log('Cleaning ' + $.util.colors.blue(delconfig));
+  del(delconfig, done);
+});
+
+gulp.task('clean-all', function(done) {
+  var delconfig = config.allToClean;
+  log('Cleaning ' + $.util.colors.blue(delconfig));
+  clean(delconfig, done);
+});
+
 gulp.task('sass', function() {
   log('Compiling Sass --> CSS');
 

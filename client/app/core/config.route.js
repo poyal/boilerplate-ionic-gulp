@@ -29,14 +29,14 @@
       $stateProvider.state('tab', {
         url: '/tab',
         abstract: true,
-        templateUrl: 'templates/tabs.html'
+        templateUrl: 'app/tab/tabs.html'
       });
 
       $stateProvider.state('tab.dash', {
           url: '/dash',
           views: {
             'tab-dash': {
-              templateUrl: 'app/tab/dash.html',
+              templateUrl: 'app/tab/dash/dash.html',
               controller: 'DashCtrl'
             }
           }
@@ -45,7 +45,7 @@
           url: '/chats',
           views: {
             'tab-chats': {
-              templateUrl: 'templates/tab-chats.html',
+              templateUrl: 'app/tab/chats/chats.html',
               controller: 'ChatsCtrl'
             }
           }
@@ -54,7 +54,7 @@
           url: '/chats/:chatId',
           views: {
             'tab-chats': {
-              templateUrl: 'templates/chat-detail.html',
+              templateUrl: 'app/tab/chats/chat-detail.html',
               controller: 'ChatDetailCtrl'
             }
           }
@@ -63,7 +63,7 @@
           url: '/account',
           views: {
             'tab-account': {
-              templateUrl: 'templates/tab-account.html',
+              templateUrl: 'app/tab/account/account.html',
               controller: 'AccountCtrl'
             }
           }

@@ -1,8 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module('app')
-    .run(['$ionicPlatform', appConfig]);
+  angular.module('app').run(['$ionicPlatform', appConfig]);
 
 
   function appConfig($ionicPlatform) {
@@ -19,6 +18,6 @@
         StatusBar.styleDefault();
       }
     });
-  };
+  }
 
 })();
