@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var args = require('yargs').argv;
 var browserSync = require('browser-sync');
 var config = require('./gulp.config')();
+var templateCache = require('gulp-angular-templatecache');
 var del = require('del');
 var $ = require('gulp-load-plugins')({
   lazy: true
@@ -114,19 +115,27 @@ gulp.task('optimize', ['inject', 'sass-min'], function() {
       errorHandler: swallowError
     }))
     .pipe($.useref())
-    .pipe($.if('scripts/app.js', $.uglify()))
+    //.pipe($.if('scripts/app.js', $.uglify()))
     .pipe(gulp.dest(config.dist));
 });
 
-gulp.task('serve', ['inject', 'sass'], function() {
-  startBrowserSync('serve');
+
+gulp.task('templates', function() {
+  return gulp.src(config.templates)
+    .pipe(templateCache())
+    .pipe($.concat('templates.js'))
+    .pipe(gulp.dest('client/app/'));
 });
 
 gulp.task('serve', ['inject', 'sass'], function() {
   startBrowserSync('serve');
 });
 
-gulp.task('build', ['optimize', 'copy'], function() {
+gulp.task('serve', ['inject', 'sass'], function() {
+  startBrowserSync('serve');
+});
+
+gulp.task('build', ['templates', 'optimize', 'copy'], function() {
   startBrowserSync('dist');
 });
 

@@ -2,7 +2,8 @@
   'use strict';
 
   angular.module('app')
-    .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+    .config(['$stateProvider', '$urlRouterProvider',
+      function($stateProvider, $urlRouterProvider) {
       var routes, setRoutes;
 
       routes = [
@@ -16,8 +17,6 @@
           url: url,
           templateUrl: 'app/' + route + '.html'
         };
-
-        console.log(config);
         $stateProvider.state(route, config);
         return $stateProvider;
       };
@@ -26,16 +25,26 @@
         return setRoutes(route);
       });
 
+      function getTemplate(url) {
+        return $templateCache.get(url);
+      }
+
       $stateProvider
         .state('tab', {
           url: '/tab',
           abstract: true,
-          templateUrl: 'app/tab/tabs.html'
+          templateUrl: 'app/tab/tabs.html',
+          // templateProvider: function($templateCache) {
+          //   return $templateCache.get('app/tab/tabs.html');
+          // }
         })
         .state('tab.dash', {
           url: '/dash',
           views: {
             'tab-dash': {
+              // templateProvider: function($templateCache) {
+              //   return $templateCache.get('app/tab/dash/dash.html');
+              // },
               templateUrl: 'app/tab/dash/dash.html',
               controller: 'DashCtrl'
             }
@@ -71,7 +80,7 @@
 
       $urlRouterProvider
         .otherwise('/tab/dash');
-        
+
     }]);
 
 })();

@@ -17,7 +17,6 @@ module.exports = function() {
     assets: [
       client + "/app/**/*.html",
       client + "/css/*.css",
-      client + "/templates/*.html",
       client + "/lib/ionic/js/ionic.bundle.js",
       client + "/lib/ionic/css/ionic.css",
       client + "/lib/ionic/fonts/*",
@@ -31,6 +30,9 @@ module.exports = function() {
       clientApp + "/**/*.module.js",
       clientApp + "/**/*.js",
       '!' + clientApp + "/**/*.spec.js"
+    ],
+    templates: [
+      client + "/app/**/*.html"
     ],
     docs: docs,
     docsJade: [
