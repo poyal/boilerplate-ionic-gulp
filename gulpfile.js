@@ -58,7 +58,7 @@ gulp.task('sass', function() {
     .pipe($.sass(sassOptions))
     .pipe($.autoprefixer())
     .pipe($.sourcemaps.write())
-    .pipe(gulp.dest(config.client + '/styles'));
+    .pipe(gulp.dest(config.client + '/css'));
 });
 
 gulp.task('sass-min', function() {
@@ -75,9 +75,7 @@ gulp.task('sass-min', function() {
     }))
     .pipe($.sass(sassOptions))
     .pipe($.autoprefixer())
-    .pipe($.rename({
-      suffix: ".min"
-    }))
+    //.pipe($.rename({ suffix: ".min" }))
     .pipe(gulp.dest(config.dist + '/css'));
 });
 
@@ -136,8 +134,8 @@ gulp.task('serve', ['inject', 'sass'], function() {
   startBrowserSync('serve');
 });
 
-gulp.task('serve', ['inject', 'sass'], function() {
-  startBrowserSync('serve');
+gulp.task('dev', ['inject', 'sass'], function() {
+  startBrowserSync('dev');
 });
 
 gulp.task('build', ['optimize', 'copy'], function() {
@@ -229,7 +227,7 @@ function startBrowserSync(opt) {
       log('Serving docs');
       serveDocs();
       break;
-    default:
+    case 'dev':
       log('Serving app');
       serveApp();
       break;
@@ -240,14 +238,12 @@ function startBrowserSync(opt) {
 
     options.server = {
       baseDir: [
-        config.client,
-        config.tmp
+        config.client
       ]
     };
     options.files = [
       config.client + '/**/*.*',
-      '!' + config.sass,
-      config.tmp + '/**/*.css'
+      '!' + config.sass
     ];
 
     browserSync(options);
