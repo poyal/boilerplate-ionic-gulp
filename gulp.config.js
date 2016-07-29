@@ -15,7 +15,7 @@ module.exports = function() {
       client + "/app/**/*.js"
     ],
     assets: [
-      client + "/app/**/*.html",
+      //client + "/app/**/*.html",
       client + "/css/*.css",
       client + "/lib/ionic/js/ionic.bundle.js",
       client + "/lib/ionic/css/ionic.css",

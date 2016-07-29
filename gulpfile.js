@@ -85,7 +85,7 @@ gulp.task('sass-watcher', function() {
   gulp.watch([config.sass], ['sass']);
 });
 
-gulp.task('inject', function() {
+gulp.task('inject', ['templates'], function() {
   log('Injecting custom scripts to index.html');
   log(config.js);
   return gulp
@@ -115,14 +115,14 @@ gulp.task('optimize', ['inject', 'sass-min'], function() {
       errorHandler: swallowError
     }))
     .pipe($.useref())
-    //.pipe($.if('scripts/app.js', $.uglify()))
+    .pipe($.if('scripts/app.js', $.uglify()))
     .pipe(gulp.dest(config.dist));
 });
 
 
 gulp.task('templates', function() {
   return gulp.src(config.templates)
-    .pipe(templateCache())
+    .pipe(templateCache({ root: 'app/'}))
     .pipe($.concat('templates.js'))
     .pipe(gulp.dest('client/app/'));
 });
@@ -135,7 +135,7 @@ gulp.task('serve', ['inject', 'sass'], function() {
   startBrowserSync('serve');
 });
 
-gulp.task('build', ['templates', 'optimize', 'copy'], function() {
+gulp.task('build', ['optimize', 'copy'], function() {
   startBrowserSync('dist');
 });
 
