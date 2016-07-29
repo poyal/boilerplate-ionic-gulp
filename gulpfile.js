@@ -58,7 +58,7 @@ gulp.task('sass', function() {
     .pipe($.sass(sassOptions))
     .pipe($.autoprefixer())
     .pipe($.sourcemaps.write())
-    .pipe(gulp.dest(config.dist + '/styles'));
+    .pipe(gulp.dest(config.client + '/styles'));
 });
 
 gulp.task('sass-min', function() {
