@@ -122,8 +122,13 @@ gulp.task('optimize', ['inject', 'sass-min'], function() {
 
 gulp.task('templates', function() {
   return gulp.src(config.templates)
-    .pipe(templateCache({ root: 'app/'}))
-    .pipe($.concat('templates.js'))
+    .pipe(templateCache({
+      root: 'app/',
+      filename: 'templates.module.js',
+      module: 'app.templates',
+      standalone: true
+    }))
+    //.pipe($.concat('templates.module.js'))
     .pipe(gulp.dest('client/app/'));
 });
 
