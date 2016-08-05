@@ -31,6 +31,11 @@ module.exports = function() {
       clientApp + "/**/*.js",
       '!' + clientApp + "/**/*.spec.js"
     ],
+    devjs: [
+      clientApp + "/**/*.module.js",
+      clientApp + "/**/*.js",
+      '!' + clientApp + "/**/*.spec.js"
+    ],
     templates: [
       client + "/app/**/*.html"
     ],

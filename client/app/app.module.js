@@ -5,8 +5,11 @@
     'ionic',
     'ngCordova',
     'app.core',
-    'app.templates',
-    'app.tab'
+    //'app.templates',
+    'app.setting',
+    'app.main',
+    'app.dash',
+    'app.chats'
   ]);
 
 })();

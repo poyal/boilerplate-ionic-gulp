@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module('app.tab')
+  angular.module('app.chats')
     .factory('Chats', function() {
       // Might use a resource here that returns a JSON array
 

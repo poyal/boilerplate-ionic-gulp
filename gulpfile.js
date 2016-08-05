@@ -85,10 +85,21 @@ gulp.task('sass-watcher', function() {
 
 gulp.task('inject', ['templates'], function() {
   log('Injecting custom scripts to index.html');
-  log(config.js);
   return gulp
     .src(config.index)
     .pipe($.inject(gulp.src(config.js), {
+      relative: true
+    }))
+    .pipe(gulp.dest(config.client));
+});
+
+gulp.task('inject-dev', function() {
+  log('Injecting custom scripts to index.html except templates.module.js');
+  var templateFile = '!' + config.client + '/app/templates.module.js';
+  var devjs = [].concat(config.js, [templateFile]);
+  return gulp
+    .src(config.index)
+    .pipe($.inject(gulp.src(devjs), {
       relative: true
     }))
     .pipe(gulp.dest(config.client));
