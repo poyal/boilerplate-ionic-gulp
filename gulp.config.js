@@ -31,6 +31,7 @@ module.exports = function() {
     js: [
       clientApp + "/**/*.module.js",
       clientApp + "/**/*.js",
+      client + "/css/*.css",
       '!' + clientApp + "/**/*.spec.js"
     ],
     pubSass: [

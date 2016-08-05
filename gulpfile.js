@@ -207,7 +207,9 @@ gulp.task('css-deploy', function() {
   log('Copying css from html to client');
 
   return gulp
-    .src([config.html + '/css/**/*.*'])
+    .src(['/css/*.*'], {
+      base: config.html
+    })
     .pipe(gulp.dest(config.client + '/css'));
 });
 
