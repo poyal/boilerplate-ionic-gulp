@@ -2,6 +2,7 @@ module.exports = function() {
   var client = 'client',
     clientApp = './client/app',
     dist = 'www',
+    publish = 'html',
     tmp = '.tmp',
     docs = 'documnetation',
     landing = 'landing';
@@ -9,6 +10,7 @@ module.exports = function() {
   var config = {
     client: client,
     dist: dist,
+    publish: publish,
     tmp: tmp,
     index: client + "/index.html",
     alljs: [
@@ -31,10 +33,12 @@ module.exports = function() {
       clientApp + "/**/*.js",
       '!' + clientApp + "/**/*.spec.js"
     ],
-    devjs: [
-      clientApp + "/**/*.module.js",
-      clientApp + "/**/*.js",
-      '!' + clientApp + "/**/*.spec.js"
+    pubSass: [
+      publish + "/scss/*.scss",
+    ],
+    pubSrc: [
+      publish + "/assets/**/*.scss",
+      publish + "/ionic/scss/*.scss"
     ],
     templates: [
       client + "/app/**/*.html"

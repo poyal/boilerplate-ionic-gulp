@@ -83,6 +83,7 @@ gulp.task('sass-watcher', function() {
   gulp.watch([config.sass], ['sass']);
 });
 
+
 gulp.task('inject', ['templates'], function() {
   log('Injecting custom scripts to index.html');
   return gulp
@@ -115,6 +116,7 @@ gulp.task('copy', function() {
     .pipe(gulp.dest(config.dist + '/'));
 });
 
+
 gulp.task('optimize', ['inject', 'sass-min'], function() {
   log('Optimizing the js, css, html');
 
@@ -145,7 +147,7 @@ gulp.task('serve', ['inject', 'sass'], function() {
   startBrowserSync('serve');
 });
 
-gulp.task('dev', ['inject', 'sass'], function() {
+gulp.task('dev', ['inject-dev', 'sass'], function() {
   startBrowserSync('dev');
 });
 
@@ -159,6 +161,54 @@ gulp.task('serve-dist', function() {
 
 gulp.task('serve-docs', ['jade-docs'], function() {
   startBrowserSync('docs');
+});
+
+
+
+
+
+
+
+
+
+
+var includeIonic = false;
+
+gulp.task('css', function() {
+  var srcFiles = config.pubSrc;
+  if (!includeIonic) srcFiles = [config.publish + "/assets/**/*.scss"];
+  gulp.watch(srcFiles, ['publish-sass']);
+  startBrowserSync('publish');
+});
+
+gulp.task('publish-sass', function() {
+  log('Compiling Sass for publish --> CSS');
+
+  var sassOptions = {
+    outputStyle: 'nested' // nested, expanded, compact, compressed
+  };
+
+  var srcFiles = config.pubSass;
+  if (!includeIonic) srcFiles = [config.publish + "/scss/style.scss"];
+
+  return gulp
+    .src(srcFiles)
+    .pipe($.plumber({
+      errorHandler: swallowError
+    }))
+    .pipe($.sourcemaps.init())
+    .pipe($.sass(sassOptions))
+    .pipe($.autoprefixer())
+    .pipe($.sourcemaps.write())
+    .pipe(gulp.dest('./html/css'));
+});
+
+gulp.task('css-deploy', function() {
+  log('Copying css from html to client');
+
+  return gulp
+    .src([config.html + '/css/**/*.*'])
+    .pipe(gulp.dest(config.client + '/css'));
 });
 
 /*
@@ -230,10 +280,6 @@ function startBrowserSync(opt) {
   };
 
   switch (opt) {
-    case 'dist':
-      log('Serving dist app');
-      serveDistApp();
-      break;
     case 'docs':
       log('Serving docs');
       serveDocs();
@@ -242,6 +288,25 @@ function startBrowserSync(opt) {
       log('Serving app');
       serveApp();
       break;
+    case 'publish':
+      log('Serving Publish Files');
+      servePublishApp();
+      break;
+    case 'dist':
+    default:
+      log('Serving dist app');
+      serveDistApp();
+      break;
+  }
+
+  function servePublishApp() {
+    options.server = {
+      baseDir: [
+        config.publish
+      ]
+    };
+
+    browserSync(options);
   }
 
   function serveApp() {
@@ -266,7 +331,12 @@ function startBrowserSync(opt) {
         config.dist
       ]
     };
-    options.files = [];
+    options.files = [
+      config.publish + '/**/*.*',
+      '!' + config.publish + '/scss/**/*.*',
+      '!' + config.publish + '/ionic/**/*.*',
+      '!' + config.publish + '/assets/**/*.*'
+    ];
 
     browserSync(options);
   }
