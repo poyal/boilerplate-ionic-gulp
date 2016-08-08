@@ -1,8 +1,10 @@
 body {
   background-color: #ddd;
   color: green;
-  font-size: 1.8em;
+  font-size: 12px;
   line-height: 20px;
 }
-
-h1 { padding-left: 10px; }
+h1 {
+  padding-left: 10px;
+  font-weight: 500;
+}

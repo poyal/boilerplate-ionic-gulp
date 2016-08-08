@@ -172,7 +172,7 @@ gulp.task('serve-docs', ['jade-docs'], function() {
 
 
 
-var includeIonic = false;
+var includeIonic = true;
 
 gulp.task('css', function() {
   var srcFiles = config.pubSrc;
