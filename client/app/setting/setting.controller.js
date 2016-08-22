@@ -4,10 +4,18 @@
   angular.module('app.setting')
     .controller('SettingCtrl', SettingCtrl);
 
-  SettingCtrl.$inject = ['$scope'];
+  SettingCtrl.$inject = [];
 
-  function SettingCtrl($scope) {
-    $scope.settings = {
+  function SettingCtrl() {
+    var vm = this;
+
+    activate();
+
+    function activate() {
+
+    }
+
+    vm.settings = {
       enableFriends: true
     };
   }

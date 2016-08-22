@@ -5,9 +5,16 @@
     .module('app.dash')
     .controller('DashCtrl', DashCtrl);
 
-  DashCtrl.$inject = ['$scope', '$ionicPopup', '$cordovaDevice'];
+  DashCtrl.$inject = [];
 
-  function DashCtrl($scope, $ionicPopup, $cordovaDevice) {
+  function DashCtrl() {
+    var vm = this;
+
+    activate();
+
+    function activate() {
+
+    }
   }
 
 })();

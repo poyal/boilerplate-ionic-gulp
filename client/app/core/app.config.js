@@ -3,7 +3,6 @@
 
   angular.module('app').run(['$ionicPlatform', appConfig]);
 
-
   function appConfig($ionicPlatform) {
     $ionicPlatform.ready(function() {
 

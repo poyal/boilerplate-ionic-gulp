@@ -10,7 +10,8 @@
           views: {
             'menuContent': {
               templateUrl: 'app/dash/dash.html',
-              controller: 'DashCtrl'
+              controller: 'DashCtrl',
+              controllerAs: 'vm'
             }
           }
         });

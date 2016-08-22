@@ -35,7 +35,8 @@
             url: '/app',
             abstract: true,
             templateUrl: 'app/templates/menu.html',
-            controller: 'AppCtrl'
+            controller: 'AppCtrl',
+            controllerAs: 'root'
           });
 
         $urlRouterProvider.otherwise('/app/dash');

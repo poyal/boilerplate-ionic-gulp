@@ -5,9 +5,16 @@
     .module('app.main')
     .controller('MainCtrl', MainCtrl);
 
-  MainCtrl.$inject = ['$scope'];
+  MainCtrl.$inject = [];
 
-  function MainCtrl($scope) {
+  function MainCtrl() {
+    var vm = this;
+
+    activate();
+
+    function activate() {
+
+    }
   }
 
 })();

@@ -1,22 +1,18 @@
 (function() {
   'use strict';
 
-  angular.module('app.chats')
-    .controller('ChatsCtrl', ChatsCtrl)
-    .controller('ChatDetailCtrl', ChatDetailCtrl);
+  angular
+    .module('app.chats')
+    .controller('ChatsCtrl', ChatsCtrl);
 
-  ChatsCtrl.$inject = ['$scope', 'Chats'];
-  ChatDetailCtrl.$inject = ['$scope', '$stateParams', 'Chats'];
+  ChatsCtrl.$inject = ['Chats'];
 
-  function ChatsCtrl($scope, Chats) {
-    $scope.chats = Chats.all();
-    $scope.remove = function(chat) {
+  function ChatsCtrl(Chats) {
+    var vm = this;
+    vm.chats = Chats.all();
+    vm.remove = function(chat) {
       Chats.remove(chat);
     };
-  }
-
-  function ChatDetailCtrl($scope, $stateParams, Chats) {
-    $scope.chat = Chats.get($stateParams.chatId);
   }
 
 

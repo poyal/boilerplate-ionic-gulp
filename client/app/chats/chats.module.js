@@ -10,7 +10,8 @@
           views: {
             'menuContent': {
               templateUrl: 'app/chats/chats.html',
-              controller: 'ChatsCtrl'
+              controller: 'ChatsCtrl',
+              controllerAs: 'vm'
             }
           }
         })
@@ -19,7 +20,8 @@
           views: {
             'menuContent': {
               templateUrl: 'app/chats/chat-detail.html',
-              controller: 'ChatDetailCtrl'
+              controller: 'ChatDetailCtrl',
+              controllerAs: 'vm'
             }
           }
         });

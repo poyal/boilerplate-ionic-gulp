@@ -8,6 +8,13 @@
   AppCtrl.$inject = ['$scope'];
 
   function AppCtrl($scope) {
+    var vm = this;
+
+    activate();
+
+    function activate() {
+
+    }
   }
 
 })();

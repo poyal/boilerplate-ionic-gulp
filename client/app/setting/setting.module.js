@@ -10,7 +10,8 @@
           views: {
             'menuContent': {
               templateUrl: 'app/setting/setting.html',
-              controller: 'SettingCtrl'
+              controller: 'SettingCtrl',
+              controllerAs: 'vm'
             }
           }
         });
