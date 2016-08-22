@@ -9,7 +9,8 @@
     'app.setting',
     'app.main',
     'app.dash',
-    'app.chats'
+    'app.chats',
+    'app.page'
   ]);
 
 })();

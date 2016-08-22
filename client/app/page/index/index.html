@@ -1,0 +1,12 @@
+<ion-view title="Index list">
+  <ion-content>
+    <ul class="list">
+      <li ng-class="{'item': true, 'item-divider': route.header }" ng-repeat="route in vm.pages">
+        <a href="{{route.href}}">
+          {{route.title}}
+          <span ng-if="route.link"> | {{route.link}}</span>
+        </a>
+      </li>
+    </ul>
+  </ion-content>
+</ion-view>
