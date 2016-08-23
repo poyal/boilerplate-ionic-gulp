@@ -25,7 +25,7 @@
           }
         });
 
-      if(window.pageRoutes) {
+      if (window.pageRoutes) {
         var routes = pageRoutes;
         routes.forEach(function(route) {
           setRoutes(route);
