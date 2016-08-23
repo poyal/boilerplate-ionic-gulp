@@ -11,9 +11,19 @@ window.pageRoutes = [
 window.pageRoutes2 = [
   {
     "title": "사용자", "route": "user", "routes": [
-      { "title": "회원가입", "route": "join" },
-      { "title": "로그인", "route": "login" },
-      { "title": "탈퇴", "route": "withdraw" }
+      {
+        "title": "회원가입",
+        "route": "join",
+        "description": "회원가입 상세 설치공사 v0.2 32p"
+      },
+      {
+        "title": "로그인",
+        "route": "login"
+      },
+      {
+        "title": "탈퇴",
+        "route": "withdraw"
+      }
     ]
   },
   {
