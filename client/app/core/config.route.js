@@ -14,9 +14,7 @@
             controllerAs: 'root'
           });
 
-        $urlRouterProvider.otherwise('/app/dash');
-
+        $urlRouterProvider.otherwise('/app/home');
       }
     ]);
-
 })();

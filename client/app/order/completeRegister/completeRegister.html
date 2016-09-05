@@ -1,0 +1,79 @@
+<ion-view title="설치공사자재&철거공사자재">
+    <ion-nav-buttons side="right">
+        <button class="button button-icon icon ion-android-more-vertical" ng-click="vm.popover.show($event)"></button>
+    </ion-nav-buttons>
+    <ion-content>
+        <h2>설치공사자재</h2>
+        <div class="card">
+            <div class="list">
+                <div class="item">
+                    서비스 번호
+                    <span class="item-note">
+                        {{vm.completeRegisterData.serviceNo}}
+                    </span>
+                </div>
+                <div class="item">
+                    상호명
+                    <span class="item-note">
+                        {{vm.completeRegisterData.businessName}}
+                    </span>
+                </div>
+                <div class="item">
+                    고객명
+                    <span class="item-note">
+                        {{vm.completeRegisterData.username}}
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="list">
+            <div class="item" ng-repeat="installData in vm.completeRegisterData.installMaterials">
+                <h2>상태:{{installData.state}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;수량:{{installData.num}}</h2>
+                <p>{{installData.device}}</p>
+            </div>
+        </div>
+
+        <h2>철거공사자재</h2>
+        <div class="card">
+            <div class="list">
+                <div class="item">
+                    서비스 번호
+                    <span class="item-note">
+                        {{vm.completeRegisterData.serviceNo}}
+                    </span>
+                </div>
+                <div class="item">
+                    상호명
+                    <span class="item-note">
+                        {{vm.completeRegisterData.businessName}}
+                    </span>
+                </div>
+                <div class="item">
+                    고객명
+                    <span class="item-note">
+                        {{vm.completeRegisterData.username}}
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="list">
+            <div ng-repeat="list in vm.completeRegisterData.materials">
+                <ion-item class="item item-button-right" ng-class="{active: vm.isListShown(list)}">
+                    <h2>명령:{{list.order}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;철거:{{list.demolish}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;미철거:{{list.nonDemolish}}</h2>
+                    <p>{{list.device}}</p>
+                    <div class="buttons">
+                        <button class="button icon ion-android-more-vertical" ng-click="vm.toggleList(list)"></button>
+                    </div>
+                </ion-item>
+
+                <ion-item class="item-accordion" ng-show="vm.isListShown(list)">
+                    <div class="list-addon">
+                        <div class="list-buttons-popover">
+                            <button class="button button-block icon-left ion-plus button-outline button-dark" ng-click="vm.goDemolishMaterial(list.order)">수정</button>
+                        </div>
+                    </div>
+                </ion-item>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

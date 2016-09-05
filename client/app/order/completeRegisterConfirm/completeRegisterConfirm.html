@@ -1,0 +1,54 @@
+<ion-view title="완료 등록">
+    <ion-content>
+        <div class="card">
+            <div class="list">
+                <div class="item">
+                    서비스 번호
+                    <span class="item-note">
+                        {{vm.parseData.serviceNo}}
+                    </span>
+                </div>
+                <div class="item">
+                    상호명
+                    <span class="item-note">
+                        {{vm.parseData.businessName}}
+                    </span>
+                </div>
+                <div class="item">
+                    고객명
+                    <span class="item-note">
+                        {{vm.parseData.username}}
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="list">
+            <form>
+                <label class="item item-input">
+                    <span class="input-label">MIN번호</span>
+                    <input type="number" name="MINNo" ng-model="vm.parseData.MINNo">
+                </label>
+                <label class="item item-input item-select">
+                    <span class="input-label">모델</span>
+                    <select name="modelNo" ng-model="vm.parseData.modelNo">
+                        <option value="001">모델1</option>
+                        <option value="002">모델2</option>
+                        <option value="003">모델3</option>
+                    </select>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">일련번호</span>
+                    <input type="text" name="serialNo" ng-model="vm.parseData.serialNo">
+                </label>
+                <label class="item item-input">
+                    <textarea name="memo" ng-model="vm.parseData.memo" placeholder="비고"></textarea>
+                </label>
+            </form>
+        </div>
+        <div class="buttons">
+            <button class="button button-block button-positive" ng-click="vm.completeButton(vm.parseData)">
+                완료
+            </button>
+        </div>
+    </ion-content>
+</ion-view>

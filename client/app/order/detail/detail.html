@@ -1,0 +1,84 @@
+<ion-view title="공사상세">
+    <ion-nav-buttons side="right">
+        <button class="button button-icon icon ion-android-more-vertical" ng-click="vm.popover.show($event)"></button>
+    </ion-nav-buttons>
+    <ion-content>
+        <h3>공사 일반</h3>
+        <div class="list">
+            <label class="item item-input">
+                <span class="input-label">서비스번호</span>
+                <input type="text" name="serviceNo" ng-model="vm.resultData.construction.serviceNo" disabled>
+            </label>
+            <label class="item item-input">
+                <span class="input-label">청약일자</span>
+                <input type="text" name="subscriptionData" ng-model="vm.resultData.construction.subscriptionData" disabled>
+            </label>
+            <label class="item item-input">
+                <span class="input-label">공사희망일</span>
+                <input type="text" name="constructionDate" ng-model="vm.resultData.construction.constructionDate" disabled>
+            </label>
+            <label class="item item-input">
+                <span class="input-label">고객명</span>
+                <input type="text" name="customerName" ng-model="vm.resultData.construction.customerName" disabled>
+            </label>
+            <label class="item item-input">
+                <span class="input-label">상호명</span>
+                <input type="text" name="companyName" ng-model="vm.resultData.construction.companyName" disabled>
+            </label>
+            <label class="item item-input">
+                <span class="input-label">접속전화번호</span>
+                <input type="text" name="phoneNo" ng-model="vm.resultData.construction.phoneNo" disabled>
+            </label>
+            <label class="item item-input">
+                <span class="input-label">설치주소1</span>
+                <input type="text" name="installAddr1" ng-model="vm.resultData.construction.installAddr1" disabled>
+            </label>
+            <label class="item item-input">
+                <span class="input-label">설치주소2</span>
+                <input type="text" name="installAddr2" ng-model="vm.resultData.construction.installAddr2" disabled>
+            </label>
+            <label class="item item-input">
+                <span class="input-label">업종대</span>
+                <input type="text" name="bussinessType1" ng-model="vm.resultData.construction.bussinessType1" disabled>
+            </label>
+            <label class="item item-input">
+                <span class="input-label">업종중</span>
+                <input type="text" name="bussinessType2" ng-model="vm.resultData.construction.bussinessType2" disabled>
+            </label>
+            <label class="item item-input">
+                <span class="input-label">공사의뢰유형</span>
+                <input type="text" name="installOrderType" ng-model="vm.resultData.construction.installOrderType" disabled>
+            </label>
+            <label class="item item-input">
+                <span class="input-label">야간공사</span>
+                <input type="text" name="nightInstall" ng-model="vm.resultData.construction.nightInstall" disabled>
+            </label>
+            <label class="item item-input">
+                <span class="input-label">사전배선</span>
+                <input type="text" name="beforeWiring" ng-model="vm.resultData.construction.beforeWiring" disabled>
+            </label>
+            <label class="item item-input">
+                <span class="input-label">휴일공사</span>
+                <input type="text" name="offDayInstall" ng-model="vm.resultData.construction.offDayInstall" disabled>
+            </label>
+        </div>
+        <h3>명령 자제</h3>
+        <div class="list">
+            <a class="item" ng-repeat="data in vm.resultData.materials">
+                <h2>명령:{{data.order}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;철거:{{data.demolish}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;미철거:{{data.nonDemolish}}</h2>
+                <p>{{data.device}}</p>
+            </a>
+        </div>
+        <h3>준공 검사</h3>
+        <ion-list>
+            <ion-checkbox ng-repeat="checkList in vm.chekcklist" ng-model="checkList.isConfirm">{{checkList.text}}</ion-checkbox>
+        </ion-list>
+        <h3>관제 신호</h3>
+        <div class="list">
+            <a class="item" ng-repeat="signalData in vm.resultData.controlSignal">
+                {{signalData.signalDate}}
+                <p>{{signalData.signalContent}}</p>
+            </a>
+        </div>
+    </ion-content>
+</ion-view>

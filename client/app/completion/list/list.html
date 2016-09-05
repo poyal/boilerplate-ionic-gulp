@@ -1,0 +1,31 @@
+<ion-view title="공사준공등록">
+    <ion-content>
+        <ion-list>
+            <div ng-repeat="list in vm.parsedList">
+                <ion-item class="item item-button-right" ng-class="{active: vm.isListShown(list)}">
+                    <div>
+                        {{list.branch}}
+                        <span class="item-note">
+                            {{list.installCode}}
+                        </span>
+                    </div>
+                    <div>
+                        <span>{{list.userName}}</span>
+                        <span class="item-note">
+                            {{list.type}}
+                        </span>
+                    </div>
+                    <div class="buttons">
+                        <button class="button icon ion-android-more-vertical" ng-click="vm.toggleList(list)"></button>
+                    </div>
+                </ion-item>
+
+                <ion-item class="item-accordion" ng-show="vm.isListShown(list)">
+                    <div class="list-addon">
+                        <popover-menu addr="completion" id="{{list.id}}"></popover-menu>
+                    </div>
+                </ion-item>
+            </div>
+        </ion-list>
+    </ion-content>
+</ion-view>

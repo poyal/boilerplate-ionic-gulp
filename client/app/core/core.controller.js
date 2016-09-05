@@ -1,20 +1,19 @@
-(function() {
-  'use strict';
+(function () {
+    'use strict';
 
-  angular
-    .module('app')
-    .controller('AppCtrl', AppCtrl);
+    angular
+        .module('app')
+        .controller('AppCtrl', AppCtrl);
 
-  AppCtrl.$inject = ['$scope'];
+    AppCtrl.$inject = [];
 
-  function AppCtrl($scope) {
-    var vm = this;
+    function AppCtrl() {
+        var vm = this;
 
-    activate();
+        activate();
 
-    function activate() {
+        function activate() {
 
+        }
     }
-  }
-
 })();

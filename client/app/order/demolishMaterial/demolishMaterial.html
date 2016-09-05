@@ -1,0 +1,49 @@
+<ion-view title="철거자재수정">
+    <ion-content>
+        <div class="list card">
+            <div class="item item-icon-left">
+                <i class="icon ion-home"></i>
+                <h2>조회한 철거자재수량을 수정합니다.</h2>
+                <h2>미철거자재인경우 사유를 입력합니다.</h2>
+            </div>
+        </div>
+        <form novalidate name="demolishMaterialForm">
+            <div class="list">
+                <label class="item item-input">
+                    <span class="input-label">자재명</span>
+                    <input type="text" name="materialName" ng-model="vm.parseData.materialName" disabled>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">구분</span>
+                    <input type="text" name="materialGubun" ng-model="vm.parseData.materialGubun" disabled>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">설치수량</span>
+                    <input type="text" name="installNum" ng-model="vm.parseData.installNum" disabled>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">철거수량</span>
+                    <input type="number" name="demolishNum" ng-model="vm.parseData.demolishNum">
+                </label>
+                <label class="item item-input item-select">
+                    <span class="input-label">사유구분</span>
+                    <select name="reasonGubun" ng-model="vm.parseData.reasonGubun">
+                        <option value="001">사유1</option>
+                        <option value="002">사유2</option>
+                        <option value="003">사유3</option>
+                    </select>
+                </label>
+                <label class="item item-input">
+                    <textarea name="memo" ng-model="vm.parseData.memo" placeholder="비고"></textarea>
+                </label>
+            </div>
+            <div class="buttons">
+                <button class="button button-block button-positive" ng-click="vm.demolishMaterialSave(vm.parseData)">
+                    저장
+                </button>
+            </div>
+
+        </form>
+
+    </ion-content>
+</ion-view>

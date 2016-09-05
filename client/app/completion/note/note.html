@@ -1,0 +1,13 @@
+<ion-view title="비고 입력">
+    <ion-content>
+        <div align="center">
+            <h3>비고</h3>
+            <label class="item item-input">
+                <textarea placeholder="비고입력" style="height: 400px" ng-model="vm.dataJson.note"></textarea>
+            </label>
+        </div>
+        <div class="buttons">
+            <a class="button button-block button-positive" ng-click="vm.noteUpdate()">저장</a>
+        </div>
+    </ion-content>
+</ion-view>

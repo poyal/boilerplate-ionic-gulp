@@ -1,0 +1,154 @@
+<ion-view title="공사 상세">
+    <ion-nav-buttons side="right">
+        <button class="button button-icon icon ion-android-more-vertical" ng-click="vm.popover.show($event)"></button>
+    </ion-nav-buttons>
+    <ion-content>
+        <h3>공사 일반</h3>
+        <div class="list">
+            <label class="item item-input">
+                <span class="input-label">서비스번호</span>
+                <input type="text" name="serviceNo" ng-model="vm.resultData.construction.serviceNo" disabled>
+            </label>
+            <label class="item item-input">
+                <span class="input-label">청약일자</span>
+                <input type="text" name="subscriptionData" ng-model="vm.resultData.construction.subscriptionData"
+                       disabled>
+            </label>
+            <label class="item item-input">
+                <span class="input-label">공사희망일</span>
+                <input type="text" name="constructionDate" ng-model="vm.resultData.construction.constructionDate"
+                       disabled>
+            </label>
+            <label class="item item-input">
+                <span class="input-label">고객명</span>
+                <input type="text" name="customerName" ng-model="vm.resultData.construction.customerName" disabled>
+            </label>
+            <label class="item item-input">
+                <span class="input-label">상호명</span>
+                <input type="text" name="companyName" ng-model="vm.resultData.construction.companyName" disabled>
+            </label>
+            <label class="item item-input">
+                <span class="input-label">접속전화번호</span>
+                <input type="text" name="phoneNo" ng-model="vm.resultData.construction.phoneNo" disabled>
+            </label>
+            <label class="item item-input">
+                <span class="input-label">설치주소1</span>
+                <input type="text" name="installAddr1" ng-model="vm.resultData.construction.installAddr1" disabled>
+            </label>
+            <label class="item item-input">
+                <span class="input-label">설치주소2</span>
+                <input type="text" name="installAddr2" ng-model="vm.resultData.construction.installAddr2" disabled>
+            </label>
+            <label class="item item-input">
+                <span class="input-label">업종대</span>
+                <input type="text" name="bussinessType1" ng-model="vm.resultData.construction.bussinessType1" disabled>
+            </label>
+            <label class="item item-input">
+                <span class="input-label">업종중</span>
+                <input type="text" name="bussinessType2" ng-model="vm.resultData.construction.bussinessType2" disabled>
+            </label>
+            <label class="item item-input">
+                <span class="input-label">공사의뢰유형</span>
+                <input type="text" name="installOrderType" ng-model="vm.resultData.construction.installOrderType"
+                       disabled>
+            </label>
+            <label class="item item-input">
+                <span class="input-label">야간공사</span>
+                <input type="text" name="nightInstall" ng-model="vm.resultData.construction.nightInstall" disabled>
+            </label>
+            <label class="item item-input">
+                <span class="input-label">사전배선</span>
+                <input type="text" name="beforeWiring" ng-model="vm.resultData.construction.beforeWiring" disabled>
+            </label>
+            <label class="item item-input">
+                <span class="input-label">휴일공사</span>
+                <input type="text" name="offDayInstall" ng-model="vm.resultData.construction.offDayInstall" disabled>
+            </label>
+        </div>
+        <h3>설치 자제</h3>
+        <div class="list">
+            <div class="item" ng-repeat="data in vm.resultData.materials">
+                <h2>명령:{{data.order}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;철거:{{data.demolish}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;미철거:{{data.nonDemolish}}</h2>
+                <p>{{data.device}}</p>
+            </div>
+        </div>
+        <h3>완료 점검</h3>
+        <ion-list>
+            <form>
+                <div class="list">
+                    <label class="item item-input item-select item-stacked-label">
+                        <p>문1. 설치공사 방문목적에 대해 사전에 연락 받으신</p>
+                        <p>적이 있으며, 고객님과 방문 약속시간을 제대로 </p>
+                        <p>준수하였습니까?</p>
+                        <select name="q1" ng-model="vm.resultData.qList.q1" disabled>
+                            <option value="0">점수를 입력하세요.</option>
+                            <option value="1">1. 매우 불만족</option>
+                            <option value="2">2. 불만족</option>
+                            <option value="3">3. 보통</option>
+                            <option value="4">4. 만족</option>
+                            <option value="5">5. 매우 만족</option>
+                        </select>
+                    </label>
+                    <label class="item item-input item-select item-stacked-label">
+                        <p>문2. 설치공사 하기 전 공사 전반에 대한 설명과</p>
+                        <p>공사기간 준수에 대해서 만족도를 점수로 주신다면</p>
+                        <p>몇점을 주시겠습니까?</p>
+                        <select name="q2" ng-model="vm.resultData.qList.q2" disabled>
+                            <option value="0">점수를 입력하세요.</option>
+                            <option value="1">1. 매우 불만족</option>
+                            <option value="2">2. 불만족</option>
+                            <option value="3">3. 보통</option>
+                            <option value="4">4. 만족</option>
+                            <option value="5">5. 매우 만족</option>
+                        </select>
+                    </label>
+                    <label class="item item-input item-select item-stacked-label">
+                        <p>문3. 설치공사 수행 시 소음등 사전에 고객님께 허락</p>
+                        <p>후 공사 진행에 대해서 만족도를 점수로 주신다면</p>
+                        <p>몇점을 주시겠습니까?</p>
+                        <select name="q3" ng-model="vm.resultData.qList.q3" disabled>
+                            <option value="0">점수를 입력하세요.</option>
+                            <option value="1">1. 매우 불만족</option>
+                            <option value="2">2. 불만족</option>
+                            <option value="3">3. 보통</option>
+                            <option value="4">4. 만족</option>
+                            <option value="5">5. 매우 만족</option>
+                        </select>
+                    </label>
+                    <label class="item item-input item-select item-stacked-label">
+                        <p>문4. 설치공사 후 청소 및 주변정리 등의 마무리</p>
+                        <p>상태에 대해서 만족도를 점수로 주신다면 몇 점을</p>
+                        <p>주시겠습니까?</p>
+                        <select name="q4" ng-model="vm.resultData.qList.q4" disabled>
+                            <option value="0">점수를 입력하세요.</option>
+                            <option value="1">1. 매우 불만족</option>
+                            <option value="2">2. 불만족</option>
+                            <option value="3">3. 보통</option>
+                            <option value="4">4. 만족</option>
+                            <option value="5">5. 매우 만족</option>
+                        </select>
+                    </label>
+                    <label class="item item-input item-select item-stacked-label">
+                        <p>문5. 설치공사 직원의 복장 및 용모상태에 대해서</p>
+                        <p>만족도를 점수로 주신다면 몇 점을 주시겠습니까?</p>
+                        <select name="q5" ng-model="vm.resultData.qList.q5" disabled>
+                            <option value="0">점수를 입력하세요.</option>
+                            <option value="1">1. 매우 불만족</option>
+                            <option value="2">2. 불만족</option>
+                            <option value="3">3. 보통</option>
+                            <option value="4">4. 만족</option>
+                            <option value="5">5. 매우 만족</option>
+                        </select>
+                    </label>
+                </div>
+            </form>
+        </ion-list>
+        <h3>관제 신호</h3>
+        <div class="list">
+            <div class="item" ng-repeat="signalData in vm.resultData.controlSignal">
+                {{signalData.signalDate}}
+                <p>{{signalData.signalContent}}</p>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,73 @@
+<ion-view title="{{vm.title}}">
+    <form novalidate name="orderSearchForm">
+        <ion-content>
+            <div class="list">
+                <label class="item item-input item-select">
+                    <span class="input-label">본부</span>
+                    <select name="HQ" ng-model="vm.searchData.HQ">
+                        <option value="000">선택</option>
+                        <option value="A001">본부1</option>
+                    </select>
+                </label>
+                <label class="item item-input item-select">
+                    <span class="input-label">지사</span>
+                    <select name="branch" ng-model="vm.searchData.branch">
+                        <option value="000">선택</option>
+                        <option value="A002">지사1</option>
+                        <option value="A003">지사2</option>
+                        <option value="A004">지사3</option>
+                    </select>
+                </label>
+                <label class="item item-input item-select">
+                    <span class="input-label">조회조건</span>
+                    <select name="type" ng-model="vm.searchData.type">
+                        <option value="000">선택</option>
+                        <option value="DEVI">본부</option>
+                        <option value="DEPT">지사</option>
+                    </select>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">조회시작일</span>
+                    <input type="date" name="startDate" ng-model="vm.searchData.startDate">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">조회종료일</span>
+                    <input type="date" name="endDate" ng-model="vm.searchData.endDate">
+                </label>
+                <div ng-if="!vm.searchFlag">
+                    <label class="item item-input item-select">
+                        <span class="input-label">의뢰유형</span>
+                        <select name="request" ng-model="vm.searchData.request">
+                            <option value="000">선택</option>
+                            <option value="S1">의뢰1</option>
+                            <option value="S2">의뢰2</option>
+                        </select>
+                    </label>
+                    <label class="item item-input item-select">
+                        <span class="input-label">업체</span>
+                        <select name="business" ng-model="vm.searchData.business">
+                            <option value="000">선택</option>
+                            <option value="D1">업체1</option>
+                            <option value="D2">업체2</option>
+                        </select>
+                    </label>
+                    <label class="item item-input item-select">
+                        <span class="input-label">설치팀</span>
+                        <select name="install" ng-model="vm.searchData.install">
+                            <option value="000">선택</option>
+                            <option value="T1">팀1</option>
+                            <option value="T2">팀2</option>
+                        </select>
+                    </label>
+                </div>
+                <label class="item item-input">
+                    <button class="button button-icon icon ion-ios-minus" ng-click="vm.searchFlag = !vm.searchFlag" ng-if="!vm.searchFlag"></button>
+                    <button class="button button-icon icon ion-ios-plus" ng-click="vm.searchFlag = !vm.searchFlag" ng-if="vm.searchFlag"></button>
+                </label>
+            </div>
+        </ion-content>
+        <ion-footer-bar class="bar-assertive" ng-click="vm.footerClick(orderSearchForm)">
+            <h1 class="title">검색</h1>
+        </ion-footer-bar>
+    </form>
+</ion-view>

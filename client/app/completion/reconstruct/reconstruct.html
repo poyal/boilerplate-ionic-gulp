@@ -1,0 +1,22 @@
+<ion-view title="재시공 사유">
+    <ion-content>
+        <div align="center">
+            <h3>비고</h3>
+        </div>
+        <label class="item item-input item-select">
+            <span class="input-label">사유 구분</span>
+            <select name="install" ng-model="vm.dataJson.reConstructGubun">
+                <option value="000">선택</option>
+                <option value="R1">공사 부적합</option>
+                <option value="R2">설치 부적합</option>
+            </select>
+        </label>
+        <label class="item item-input">
+            <textarea placeholder="비고입력" style="height: 400px" ng-model="vm.dataJson.reConstructNote"></textarea>
+        </label>
+
+        <div class="buttons">
+            <a class="button button-block button-positive" ng-click="vm.reconstructUpdate()">저장</a>
+        </div>
+    </ion-content>
+</ion-view>

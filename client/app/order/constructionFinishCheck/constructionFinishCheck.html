@@ -1,0 +1,100 @@
+<ion-view title="공사완료점검">
+    <ion-content>
+        <div class="card">
+            <div class="list">
+                <div class="item">
+                    서비스 번호
+                    <span class="item-note">
+                        {{vm.parseData.serviceNo}}
+                    </span>
+                </div>
+                <div class="item">
+                    상호명
+                    <span class="item-note">
+                        {{vm.parseData.businessName}}
+                    </span>
+                </div>
+                <div class="item">
+                    고객명
+                    <span class="item-note">
+                        {{vm.parseData.username}}
+                    </span>
+                </div>
+            </div>
+        </div>
+        <form>
+            <div class="list">
+                <label class="item item-input item-select item-stacked-label">
+                    <p>문1. 설치공사 방문목적에 대해 사전에 연락 받으신</p>
+                    <p>적이 있으며, 고객님과 방문 약속시간을 제대로 </p>
+                    <p>준수하였습니까?</p>
+                    <select name="q1" ng-model="vm.qList.q1">
+                        <option value="0">점수를 입력하세요.</option>
+                        <option value="1">1. 매우 불만족</option>
+                        <option value="2">2. 불만족</option>
+                        <option value="3">3. 보통</option>
+                        <option value="4">4. 만족</option>
+                        <option value="5">5. 매우 만족</option>
+                    </select>
+                </label>
+                <label class="item item-input item-select item-stacked-label">
+                    <p>문2. 설치공사 하기 전 공사 전반에 대한 설명과</p>
+                    <p>공사기간 준수에 대해서 만족도를 점수로 주신다면</p>
+                    <p>몇점을 주시겠습니까?</p>
+                    <select name="q2" ng-model="vm.qList.q2">
+                        <option value="0">점수를 입력하세요.</option>
+                        <option value="1">1. 매우 불만족</option>
+                        <option value="2">2. 불만족</option>
+                        <option value="3">3. 보통</option>
+                        <option value="4">4. 만족</option>
+                        <option value="5">5. 매우 만족</option>
+                    </select>
+                </label>
+                <label class="item item-input item-select item-stacked-label">
+                    <p>문3. 설치공사 수행 시 소음등 사전에 고객님께 허락</p>
+                    <p>후 공사 진행에 대해서 만족도를 점수로 주신다면</p>
+                    <p>몇점을 주시겠습니까?</p>
+                    <select name="q3" ng-model="vm.qList.q3">
+                        <option value="0">점수를 입력하세요.</option>
+                        <option value="1">1. 매우 불만족</option>
+                        <option value="2">2. 불만족</option>
+                        <option value="3">3. 보통</option>
+                        <option value="4">4. 만족</option>
+                        <option value="5">5. 매우 만족</option>
+                    </select>
+                </label>
+                <label class="item item-input item-select item-stacked-label">
+                    <p>문4. 설치공사 후 청소 및 주변정리 등의 마무리</p>
+                    <p>상태에 대해서 만족도를 점수로 주신다면 몇 점을</p>
+                    <p>주시겠습니까?</p>
+                    <select name="q4" ng-model="vm.qList.q4">
+                        <option value="0">점수를 입력하세요.</option>
+                        <option value="1">1. 매우 불만족</option>
+                        <option value="2">2. 불만족</option>
+                        <option value="3">3. 보통</option>
+                        <option value="4">4. 만족</option>
+                        <option value="5">5. 매우 만족</option>
+                    </select>
+                </label>
+                <label class="item item-input item-select item-stacked-label">
+                    <p>문5. 설치공사 직원의 복장 및 용모상태에 대해서</p>
+                    <p>만족도를 점수로 주신다면 몇 점을 주시겠습니까?</p>
+                    <select name="q5" ng-model="vm.qList.q5">
+                        <option value="0">점수를 입력하세요.</option>
+                        <option value="1">1. 매우 불만족</option>
+                        <option value="2">2. 불만족</option>
+                        <option value="3">3. 보통</option>
+                        <option value="4">4. 만족</option>
+                        <option value="5">5. 매우 만족</option>
+                    </select>
+                </label>
+            </div>
+            <div class="buttons">
+                <div class="button-bar">
+                    <a class="button button-assertive" ng-click="vm.goCustomerSign()">고객서명</a>
+                    <a class="button button-positive" ng-disabled="!vm.userSignFlag" ng-click="vm.customerSignUpdate()">완료</a>
+                </div>
+            </div>
+        </form>
+    </ion-content>
+</ion-view>

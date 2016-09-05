@@ -1,0 +1,76 @@
+<ion-view title="공사준공등록">
+    <form>
+        <ion-content>
+            <div class="card">
+                <div class="list">
+                    <div class="item">
+                        서비스 번호
+                        <span class="item-note">
+                        {{vm.dataJson.serviceNo}}
+                    </span>
+                    </div>
+                    <div class="item">
+                        상호명
+                        <span class="item-note">
+                        {{vm.dataJson.businessName}}
+                    </span>
+                    </div>
+                    <div class="item">
+                        고객명
+                        <span class="item-note">
+                        {{vm.dataJson.username}}
+                    </span>
+                    </div>
+                    <div class="item">
+                        지체일수
+                        <span class="item-note">
+                        {{vm.dataJson.delayDate}}
+                    </span>
+                    </div>
+                    <div class="item">
+                        점수
+                        <span class="item-note">
+                        {{vm.dataJson.score}}
+                    </span>
+                    </div>
+                    <label class="item item-input item-select">
+                        <span class="input-label">지체 사유</span>
+                        <select name="request" ng-model="vm.dataJson.reason">
+                            <option value="000">선택</option>
+                            <option value="R1">고객사유</option>
+                            <option value="R2">본사사유</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+            <div class="button-bar">
+                <a class="button button-assertive">좌표 등록</a>
+                <a class="button button-dark" ng-click="vm.goReconstruct()">재시공 의뢰</a>
+            </div>
+            <div class="list">
+                <div ng-repeat="list in vm.dataJson.arrData">
+                    <ion-item class="item item-button-right" ng-class="{active: vm.isListShown(list)}">
+                        <div>
+                            {{list.head}}
+                            <span class="item-note">
+                                {{list.content}}
+                            </span>
+                        </div>
+                        <div class="buttons">
+                            <button class="button icon ion-android-more-vertical" ng-click="vm.toggleList(list)"></button>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="item-accordion" ng-show="vm.isListShown(list)">
+                        <div class="list-addon">
+                            <popover-menu addr="completion-register" id="{{vm.searchData.id}}" code="{{list.id}}"></popover-menu>
+                        </div>
+                    </ion-item>
+                </div>
+            </div>
+        </ion-content>
+        <ion-footer-bar class="bar-assertive" ng-click="vm.completeRegister()">
+            <h1 class="title">완료</h1>
+        </ion-footer-bar>
+    </form>
+</ion-view>

@@ -1,0 +1,79 @@
+<div>
+    <div ng-if="popover.addr === 'order'">
+        <div class="list-buttons">
+            <button class="button button-block icon-left ion-plus button-outline button-dark">
+                출력 등록
+            </button>
+        </div>
+        <div class="list-buttons">
+            <button class="button button-block icon-left ion-android-search button-outline button-dark"
+                    ng-click="popover.goDetail()">
+                상세 조회
+            </button>
+        </div>
+    </div>
+    <div ng-if="popover.addr === 'order-detail-popover'">
+        <div class="list-buttons-popover">
+            <button class="button button-block icon-left ion-chevron-down button-outline button-dark"
+                    ng-click="popover.addComplete()">
+                완료 등록
+            </button>
+        </div>
+    </div>
+    <div ng-if="popover.addr === 'order-register-popover'">
+        <div class="list-buttons-popover">
+            <button class="button button-block icon-left ion-chevron-down button-outline button-dark" ng-click="popover.goDetail()">
+                완료 등록
+            </button>
+        </div>
+    </div>
+    <div ng-if="popover.addr === 'completion'">
+        <div class="list-buttons-popover">
+            <button class="button button-block icon-left ion-android-search button-outline button-dark"
+                    ng-click="popover.goDetail()">
+                상세 조회
+            </button>
+        </div>
+    </div>
+    <div ng-if="popover.addr === 'completion-detail-popover'">
+        <div class="list-buttons-popover">
+            <button class="button button-block icon-left ion-chevron-down button-outline button-dark"
+                    ng-click="popover.addComplete()">
+                준공 등록
+            </button>
+        </div>
+    </div>
+    <div ng-if="popover.addr === 'completion-register'">
+        <div class="list-buttons-popover">
+            <button class="button button-block icon-left ion-chevron-down button-outline button-dark"
+                    ng-click="popover.goNewWindow()">
+                비고입력
+            </button>
+        </div>
+    </div>
+    <div ng-if="popover.flag">
+        <div class="list-context">
+            <button class="button icon-left ion-android-person button-clear button-dark">
+                고객
+            </button>
+        </div>
+        <div class="list-context">
+            <button class="button icon-left ion-android-contact button-clear button-dark">
+                개인
+            </button>
+        </div>
+        <div class="list-context">
+            <button class="button icon-left ion-settings button-clear button-dark">
+                설치
+            </button>
+        </div>
+        <div class="list-context">
+            <button class="button icon-left ion-image button-clear button-dark">
+                도면
+            </button>
+        </div>
+    </div>
+</div>
+
+
+

@@ -2,56 +2,80 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-  <title>Ionic Boilerplate Project</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Ionic Boilerplate Project</title>
 
-  <!-- inject:css -->
-  <link rel="stylesheet" href="css/dev.css">
-  <link rel="stylesheet" href="css/ionic.app.css">
-  <link rel="stylesheet" href="css/style.css">
-  <!-- endinject -->
-
-
-  <!-- build:js scripts/vendor.js -->
-  <script src="lib/ionic/js/ionic.bundle.js"></script>
-  <script src="lib/ngcordova/dist/ng-cordova.js"></script>
-  <!-- endbuild -->
-
-  <!-- cordova script (this will be a 404 during development) -->
-  <script src="cordova.js"></script>
-
-  <script src="routes.js"></script>
-  <script src="env.js"></script>
+    <!-- inject:css -->
+    <link rel="stylesheet" href="css/dev.css">
+    <link rel="stylesheet" href="css/ionic.app.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- endinject -->
 
 
+    <!-- build:js scripts/vendor.js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/ngcordova/dist/ng-cordova.js"></script>
+    <script src="lib/ion-slide-box-tabs/src/js/slidingTabsDirective.js"></script>
+    <!-- endbuild -->
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <!--<script src="cordova.js"></script>-->
+
+    <script src="routes.js"></script>
+    <script src="env.js"></script>
+    <script src="//apis.daum.net/maps/maps3.js?apikey=8b68e1b32a2d4ff743bce177dea7b80a"></script>
 </head>
 
 <body ng-app="app">
-  <ion-nav-view></ion-nav-view>
+    <ion-nav-view></ion-nav-view>
 
-
-  <!-- build:js scripts/app.js -->
-  <!-- inject:js -->
-  <script src="app/app.module.js"></script>
-  <script src="app/chats/chats.module.js"></script>
-  <script src="app/core/core.module.js"></script>
-  <script src="app/dash/dash.module.js"></script>
-  <script src="app/main/main.module.js"></script>
-  <script src="app/page/page.module.js"></script>
-  <script src="app/setting/setting.module.js"></script>
-  <script src="app/chats/chat.controller.js"></script>
-  <script src="app/chats/chats.controller.js"></script>
-  <script src="app/chats/chats.service.js"></script>
-  <script src="app/core/app.config.js"></script>
-  <script src="app/core/config.route.js"></script>
-  <script src="app/core/core.controller.js"></script>
-  <script src="app/dash/dash.controller.js"></script>
-  <script src="app/main/main.controller.js"></script>
-  <script src="app/setting/setting.controller.js"></script>
-  <script src="app/page/index/index.js"></script>
-  <!-- endinject -->
-  <!-- endbuild -->
+    <!-- build:js scripts/app.js -->
+    <!-- inject:js -->
+    <script src="app/app.module.js"></script>
+    <script src="app/completion/completion.module.js"></script>
+    <script src="app/core/core.module.js"></script>
+    <script src="app/main/main.module.js"></script>
+    <script src="app/map/map.module.js"></script>
+    <script src="app/order/order.module.js"></script>
+    <script src="app/templates/templates.module.js"></script>
+    <script src="app/completion/dataParse.service.js"></script>
+    <script src="app/core/app.config.js"></script>
+    <script src="app/core/config.route.js"></script>
+    <script src="app/core/core.controller.js"></script>
+    <script src="app/main/main.controller.js"></script>
+    <script src="app/order/dataparse.service.js"></script>
+    <script src="app/completion/completionRegister/completionRegister.controller.js"></script>
+    <script src="app/completion/completionRegister/completionRegister.service.js"></script>
+    <script src="app/completion/detail/detail.controller.js"></script>
+    <script src="app/completion/detail/detail.service.js"></script>
+    <script src="app/completion/list/list.controller.js"></script>
+    <script src="app/completion/note/note.controller.js"></script>
+    <script src="app/completion/note/note.service.js"></script>
+    <script src="app/completion/reconstruct/reconstruct.controller.js"></script>
+    <script src="app/completion/reconstruct/reconstruct.service.js"></script>
+    <script src="app/order/completeRegister/completeRegister.controller.js"></script>
+    <script src="app/order/completeRegister/completeRegister.service.js"></script>
+    <script src="app/completion/search/search.controller.js"></script>
+    <script src="app/completion/search/search.service.js"></script>
+    <script src="app/order/completeRegisterConfirm/completeRegisterConfirm.controller.js"></script>
+    <script src="app/order/completeRegisterConfirm/completeRegisterConfirm.service.js"></script>
+    <script src="app/order/constructionFinishCheck/constructionFinishCheck.controller.js"></script>
+    <script src="app/order/constructionFinishCheck/constructionFinishCheck.service.js"></script>
+    <script src="app/order/customerSign/customerSign.controller.js"></script>
+    <script src="app/order/customerSign/customerSign.service.js"></script>
+    <script src="app/order/detail/detail.controller.js"></script>
+    <script src="app/order/detail/detail.service.js"></script>
+    <script src="app/order/demolishMaterial/demolishMaterial.controller.js"></script>
+    <script src="app/order/demolishMaterial/demolishMaterial.service.js"></script>
+    <script src="app/order/list/list.controller.js"></script>
+    <script src="app/map/map/map.controller.js"></script>
+    <script src="app/map/map/map.service.js"></script>
+    <script src="app/templates/popoverMenu/popoverMenu.js"></script>
+    <script src="app/order/search/search.controller.js"></script>
+    <script src="app/order/search/search.service.js"></script>
+    <!-- endinject -->
+    <!-- endbuild -->
 
 
 </body>

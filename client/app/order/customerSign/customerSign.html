@@ -1,0 +1,18 @@
+<ion-view title="고객서명">
+    <ion-content>
+        <label class="item item-input">
+            <span class="input-label">서명자</span>
+            <input type="text" name="signName" ng-model="vm.insertData.signName">
+        </label>
+        <div align="center">
+            <h3>고객 서명</h3>
+            <div style="outline: #000000 solid medium;width: 80%; height: 400px; position: relative">
+                <h1>서명</h1>
+            </div>
+        </div>
+        <div class="buttons">
+            <a class="button button-block button-outline button-assertive">고객서명 지우기</a>
+            <a class="button button-block button-positive" ng-click="vm.completeButton()">완료</a>
+        </div>
+    </ion-content>
+</ion-view>
