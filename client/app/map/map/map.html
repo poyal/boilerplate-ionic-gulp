@@ -1,5 +1,21 @@
 <ion-view title="다음 지도 API">
     <ion-content scroll="false">
-        <div id="map" style="width:100%;height:500px;"></div>
+        <div id="map" style="width:100%; height: 50%"></div>
+        <h2>{{vm.arrivelength}} - {{vm.message}}</h2>
+        <div class="button-bar">
+            <button class="button button-block button-assertive" ng-keyup="vm.keyUp($event)">keyboard</button>
+            <button class="button button-block button-dark" ng-click="vm.arrive()">도착 전송</button>
+        </div>
+        <label class="item item-input item-select">
+            <div class="input-label">
+                도착 위치 변경
+            </div>
+            <form>
+                <select ng-change="vm.selectChange()" ng-model="vm.selectModel">
+                    <option ng-repeat="data in vm.selectBoxData" value="{{data.value}}">{{data.name}}</option>
+                </select>
+            </form>
+        </label>
+        <map-user-controller move-amount="{{vm.moveAmount}}"></map-user-controller>
     </ion-content>
 </ion-view>
