@@ -408,7 +408,7 @@
                 hb: selectedData.hb,
                 flag: 'select'
             });
-        }
+        };
 
         $scope.updateDir = function (x, y) {
             var intX = parseFloat(x);

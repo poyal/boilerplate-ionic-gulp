@@ -8,3 +8,5 @@ client/lib/
 .sass-cache
 platforms/
 plugins/
+
+.idea/
